@@ -1324,6 +1324,7 @@ body {
 }
 
 .container {
-  padding: 0;
+  padding: 0.5;
   max-width: 100%;
 }
+
