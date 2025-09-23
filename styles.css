@@ -262,7 +262,7 @@ nav a.cta:hover {
   text-align: center;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
 }
@@ -1324,7 +1324,7 @@ body {
 }
 
 .container {
-  padding: 0;
+  padding: 0.05;
   max-width: 100%;
 }
 
@@ -1378,5 +1378,3 @@ body {
 .whatsapp-text:hover {
   transform: scale(1.05);
 }
-
-
