@@ -61,6 +61,7 @@ html {
   font-size: clamp(14px, 2vw, 16px);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+  scroll-padding-top: 70px;
 }
 
 body {
@@ -113,15 +114,15 @@ h4 {
 p {
   font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.7;
-  color: rgb(0, 0, 0);
+  color: var(--dark-gray);
   margin-bottom: clamp(0.75rem, 2vw, 1rem);
 }
 
 .lead {
-  font-size: clamp(1.0rem, 2.0vw, 1.0rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 400;
   line-height: 1.6;
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: clamp(1rem, 3vw, 1.5rem);
 }
 
@@ -255,16 +256,17 @@ nav a.cta:hover {
 }
 
 /* Premium Hero Section */
-.hero { background: var(--gradient-hero); 
-  color: var(--white); 
-  padding: clamp(80px, 15vw, 120px) clamp(16px, 4vw, 20px) clamp(60px, 12vw, 80px); 
-  text-align: center; 
-  position: relative; 
-  overflow: hidden; 
-  min-height: 100vh; 
-  display: flex; 
-  align-items: center; }
-
+.hero {
+  background: var(--gradient-hero);
+  color: var(--white);
+  padding: clamp(80px, 15vw, 120px) clamp(16px, 4vw, 20px) clamp(60px, 12vw, 80px);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
 
 .hero::before {
   content: '';
@@ -290,7 +292,7 @@ nav a.cta:hover {
 .pill {
   display: inline-block;
   background: rgba(220, 38, 38, 0.15);
-  color: white;
+  color: rgba(255, 255, 255, 0.9);
   padding: clamp(6px, 1.5vw, 8px) clamp(16px, 4vw, 20px);
   border-radius: 25px;
   font-size: clamp(0.8rem, 2vw, 0.9rem);
@@ -313,13 +315,12 @@ nav a.cta:hover {
 /* Enhanced Hero Carousel - Mobile Optimized */
 .hero-carousel {
   position: relative;
-  height: clamp(350px, 70vw, 560px); /* increased by 40% */
+  height: clamp(250px, 50vw, 400px);
   margin: clamp(30px, 6vw, 40px) 0;
-  border-radius: clamp(3px, 3vw, 5px);
+  border-radius: clamp(12px, 3vw, 20px);
   overflow: hidden;
   box-shadow: var(--shadow-heavy);
 }
-
 
 .slide {
   position: absolute;
@@ -343,30 +344,28 @@ nav a.cta:hover {
   object-position: center;
 }
 
-.slide-text { 
+.slide-text {
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-  padding: clamp(20px, 5vw, 30px);
+  padding: clamp(30px, 8vw, 60px) clamp(20px, 5vw, 30px) clamp(20px, 5vw, 30px);
   color: var(--white);
-  max-width: 400px;   /* optional: prevents it from being too wide */
-  text-align: left;   /* ✅ forces text alignment to the left */
+  text-align: left;
 }
-.slide-text * {
-  text-align: left !important;  /* ✅ also force children inside */
-}
-
 
 .slide-text h2 {
   font-size: clamp(1.25rem, 4vw, 2rem);
   margin-bottom: clamp(5px, 2vw, 10px);
+  text-align: left;
 }
 
 .slide-text p {
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 0;
+  text-align: left;
 }
 
 /* Mobile-First Grid Layouts */
@@ -818,6 +817,25 @@ textarea {
 }
 
 /* Enhanced WhatsApp Float Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: clamp(20px, 5vw, 30px);
+  right: clamp(20px, 5vw, 30px);
+  width: clamp(50px, 12vw, 60px);
+  height: clamp(50px, 12vw, 60px);
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: var(--shadow-medium);
+  transition: all var(--transition-smooth);
+  animation: pulse 2s infinite;
+  will-change: transform;
+  text-decoration: none;
+}
+
 .whatsapp-float:hover {
   transform: scale(1.1);
   box-shadow: var(--shadow-heavy);
@@ -1226,11 +1244,6 @@ nav a:focus {
   100% { left: 100%; }
 }
 
-/* Smooth scroll behavior enhancement */
-html {
-  scroll-padding-top: 70px;
-}
-
 /* Enhanced link styling */
 a {
   color: var(--primary);
@@ -1268,112 +1281,4 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
-}app-float {
-  position: fixed;
-  bottom: clamp(20px, 5vw, 30px);
-  right: clamp(20px, 5vw, 30px);
-  width: clamp(50px, 12vw, 60px);
-  height: clamp(50px, 12vw, 60px);
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  box-shadow: var(--shadow-medium);
-  transition: all var(--transition-smooth);
-  animation: pulse 2s infinite;
-  will-change: transform;
-}
-
-.whatsapp-float {
-  width: 50px;
-  height: 50px;
-  bottom: 20px;
-  right: 20px;
-}
-
-.whatsapp-float img {
-  width: 28px;
-  height: 28px;
-}
-
-/* Print Styles */
-@media print {
-.whatsapp-float,
-.modal-backdrop,
-header {
-  display: none !important;
-}
-
-body {
-  background: white !important;
-  color: black !important;
-}
-
-.hero {
-  background: white !important;
-  color: black !important;
-}
-}
-
-.lead {
-  margin: 0 0 0.5em 0; /* only bottom spacing */
-  line-height: 1.0;    /* optional: improves readability */
-}
-
-.container {
-  padding: 0.05;
-  max-width: 100%;
-}
-
-/* Wrapper to hold both the circle and the rectangle */
-.whatsapp-wrapper {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  align-items: center;
-  gap: 10px; /* space between circle and rectangle */
-  z-index: 10000;
-}
-
-/* WhatsApp circle button */
-.whatsapp-float {
-  width: 60px;   /* increased size */
-  height: 60px;  /* increased size */
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-float img {
-  width: 32px;  /* icon size */
-  height: 32px;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-
-/* Floating rectangle with text */
-.whatsapp-text {
-  display: inline-block;
-  padding: 12px 18px;
-  background: #25D366;
-  color: #fff;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  white-space: nowrap;
-  transition: transform 0.3s ease;
-}
-
-.whatsapp-text:hover {
-  transform: scale(1.05);
 }
