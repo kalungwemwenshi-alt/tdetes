@@ -258,14 +258,16 @@ nav a.cta:hover {
 .hero {
   background: var(--gradient-hero);
   color: var(--white);
-  padding: clamp(80px, 15vw, 120px) clamp(16px, 4vw, 20px) clamp(60px, 12vw, 80px);
+  height: 120vh; /* exact fit */
+  padding: 0 clamp(16px, 4vw, 20px); /* remove vertical padding */
   text-align: center;
   position: relative;
   overflow: hidden;
-  min-height: 60vh;
   display: flex;
   align-items: center;
+  justify-content: center; /* center horizontally too */
 }
+
 
 .hero::before {
   content: '';
