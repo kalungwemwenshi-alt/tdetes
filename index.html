@@ -6,7 +6,8 @@
   <title>The Dot-com Entrepreneur — Kalungwe Mwenshi</title>
   <meta name="description" content="Kalungwe Mwenshi — The Dot-com Entrepreneur. Speaker, author, coach, and founder. Books, courses, speaking bookings and resources to build influence and income online." />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="hire.css">
 
   <!-- Link to external CSS (styles.css) -->
   <link rel="stylesheet" href="styles.css" />
@@ -27,30 +28,62 @@
   <header class="fade-in">
     <div class="nav">
       <div class="brand">
-        <div class="logo" aria-hidden>DC</div>
+        <div class="logo" aria-hidden="true">
+          <img src="images/favicon.png" alt="Logo" />
+        </div>        
         <div>
-          <div style="font-weight:900">The Dot-com Entrepreneur</div>
+          <div>The Dot-com Entrepreneur</div>
           <div class="small">Kalungwe Mwenshi — Speaker · Author · Coach</div>
         </div>
       </div>
-      <nav aria-label="Primary navigation">
+    
+      <!-- Mobile toggle button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+        ☰
+      </button>
+    
+      <!-- Nav links -->
+      <nav id="nav-links" aria-label="Primary navigation">
         <a href="#about">About</a>
+        <a href="hire.html">Hire</a>
         <a href="#services">Coaching</a>
         <a href="#catalog">Books</a>
         <a href="blog.html">Blog</a>
       </nav>
     </div>
+    
   </header>
 
   <main>
+    <!-- New Edge-to-Edge Auto-Scrolling Banner -->
+    <section class="marquee-banner">
+      <div class="marquee">
+        <div class="marquee-content">
+          <span>Xplode Sales</span>
+          <span>Scale Your Influence</span>
+          <span>Build Recurring Revenue</span>
+          <span>Master Digital Growth</span>
+          <span>Unlock Your Potential</span>
+          <span>Expert Business Coaching</span>
+          <span>Premium Sales Training</span>
+          <span>Strategic Brand Development</span>
+        </div>
+      </div>
+    </section>
+    
     <section class="hero" aria-label="Main">
+      <!-- Content -->
       <div class="container">
         <div class="pill">Founder of Finespot Group · Sales-Marketing-Technologies</div>
         <h1>Learn, Influence, and Build Scalable Thriving Businesses --The Dot-Com Way.</h1>
-        <p class="lead">I help founders, speakers, and creators turn authority into recurring revenue using practical frameworks for branding, sales, and online productization.</p>
+        <p class="lead">
+          I help founders, speakers, and creators turn authority into recurring revenue using practical frameworks for branding, sales, and online productization.
+        </p>
       </div>
     </section>
-
+    
+    
+    
     <section class="trusted-section">
       <div class="container">
         <h2><b>Trusted By</b></h2>
@@ -61,7 +94,13 @@
             <img src="images/logo3.png" alt="Brand 3">
             <img src="images/logo4.png" alt="Brand 4">
             <img src="images/logo5.png" alt="Brand 5">
-            <!-- Repeat logos for smooth loop -->
+            <!-- Duplicated for seamless loop -->
+            <img src="images/logo1.png" alt="Brand 1">
+            <img src="images/logo2.png" alt="Brand 2">
+            <img src="images/logo3.png" alt="Brand 3">
+            <img src="images/logo4.png" alt="Brand 4">
+            <img src="images/logo5.png" alt="Brand 5">
+            <!-- Third set for smooth infinite scroll -->
             <img src="images/logo1.png" alt="Brand 1">
             <img src="images/logo2.png" alt="Brand 2">
             <img src="images/logo3.png" alt="Brand 3">
@@ -283,6 +322,8 @@
     <section id="about" class="about-section">
       <div class="container">
         <h2>About Me</h2>
+        <div class="aboutcard">
+          <img src="images/about.png" alt="Modern Thinking & Investing"></div>
         <p>
           Kalungwe Mwenshi, The Dot-com Entrepreneur, is a top-tier sales and marketing coach and business consultant. He empowers business owners and entrepreneurs 
           to close bigger deals, build stronger brands, and scale their ventures through practical strategies that actually work.
@@ -302,30 +343,215 @@
       </div>
     </section> 
 
-    <section id="contact" class="fade-in">
+    <!-- hire part-->
+     <!-- Hero Section -->
+     <section class="hero" aria-label="Main">
       <div class="container">
-        <h2>Contact & Booking</h2>
-        <div class="contact-grid">
-          <div class="card">
-            <form id="contactForm">
-              <label>Name</label>
-              <input type="text" id="name" name="name" placeholder="Your Name" required />
+        <div class="hero-badge">THE DOTCOM ENTREPRENEUR</div>
+        <h1>Transform Your Business with World-Class Training & Strategy</h1>
+        <div class="hero-subtitle">
+          <strong>SALES TRAINING · STRATEGIES · BUSINESS EXPANSION IDEAS</strong>
+        </div>
+        <p class="hero-tagline"><strong>MWENSHI DELIVERS RESULTS.</strong></p>
+        
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-large" onclick="window.open('https://wa.me/260961111468?text=Hi,%20I%20want%20to%20hire%20Kalungwe%20for%20my%20organization','_blank')">
+            Hire Now
+          </button>
+          <button class="btn btn-ghost btn-large" onclick="scrollToSection('services')">
+            View Services
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition Section -->
+    <section class="value-proposition">
+      <div class="container">
+        <div class="content-wrapper">
+          <div class="text-content">
+            <p class="lead-text">
+              From boardrooms to international stages, Kalungwe Mwenshi — <em>The Dotcom Entrepreneur</em> — has become a force in sales, branding, and business growth. Entrepreneurs, founders, and teams across Africa and beyond have seen him live, while thousands more follow his cutting-edge strategies through his books, masterclasses, and digital platforms.
+            </p>
             
-              <label>Email</label>
-              <input type="email" id="email" name="email" placeholder="Your Email" required />
+            <p class="highlight-text">
+              Now, you can bring <strong>The Dotcom Entrepreneur</strong> directly into your business to provide <strong>sales mastery training, practical strategies, and powerful growth frameworks</strong> designed for today's fast-changing economy.
+            </p>
             
-              <label>Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-            
-              <button type="submit" class="btn btn-primary">Send Enquiry</button>
-            </form>
+            <div class="quote-section">
+              <blockquote>
+                "Your job is not just to run a business — create a platform that makes customers run after your business"
+              </blockquote>
+              <cite>— The Dotcom Entrepreneur</cite>
+            </div>
+          </div>
+          
+          <div class="stats-card">
+            <h3>Why Organizations Choose Kalungwe</h3>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <div class="stat-number">500+</div>
+                <div class="stat-label">Businesses Transformed</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Speaking Engagements</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">7</div>
+                <div class="stat-label">Bestselling Books</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Client Satisfaction</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Philosophy Section -->
+    <section class="philosophy-section">
+      <div class="container">
+        <div class="philosophy-content">
+          <h2>The Growth Formula</h2>
+          <div class="formula-display">
+            <span class="formula-part">Influence</span>
+            <span class="formula-operator">+</span>
+            <span class="formula-part">Sales</span>
+            <span class="formula-operator">=</span>
+            <span class="formula-result">Unstoppable Growth</span>
+          </div>
+          <p class="philosophy-text">
+            Great companies know this truth: <strong>influence + sales = unstoppable growth.</strong> Mwenshi equips organizations, startups, and ambitious individuals with tools to close bigger deals, expand markets, and turn ideas into scalable businesses.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <h2>What Kalungwe Brings to Your Organization</h2>
+        <div class="services-grid">
+          
+          <div class="service-card featured">
+            <div class="service-icon">🎯</div>
+            <h3>High-Energy Keynote Events</h3>
+            <p>Motivational presentations that ignite your organization and drive immediate action. Perfect for conferences, company meetings, and leadership summits.</p>
+            <ul>
+              <li>45-90 minute presentations</li>
+              <li>Customized content for your industry</li>
+              <li>Interactive audience engagement</li>
+              <li>Actionable takeaways</li>
+            </ul>
+            <button class="btn btn-primary" onclick="window.open('https://wa.me/260961111468?text=Hi,%20I%20want%20to%20book%20a%20keynote%20event','_blank')">
+              Book Keynote
+            </button>
           </div>
 
-          <div class="card">
-            <h4>Quick booking</h4>
-            <p class="muted">Need quick response? Book directly on WhatsApp.</p>
-            <div style="margin-top:12px">
-              <button class="btn btn-primary" id="openBooking">Open Booking</button>
+          <div class="service-card">
+            <div class="service-icon">📈</div>
+            <h3>Sales Mastery Training</h3>
+            <p>Comprehensive sales frameworks tailored for your team's specific challenges and market conditions.</p>
+            <ul>
+              <li>Team workshops & coaching</li>
+              <li>Closing techniques mastery</li>
+              <li>Pipeline optimization</li>
+              <li>Performance metrics setup</li>
+            </ul>
+            <button class="btn btn-ghost" onclick="window.open('https://wa.me/260961111468?text=Hi,%20I%20want%20sales%20training%20for%20my%20team','_blank')">
+              Get Training
+            </button>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h3>Business Growth Strategy</h3>
+            <p>Strategic consulting to scale your operations, expand into new markets, and build sustainable revenue streams.</p>
+            <ul>
+              <li>Growth strategy development</li>
+              <li>Market expansion planning</li>
+              <li>Revenue optimization</li>
+              <li>Digital transformation guidance</li>
+            </ul>
+            <button class="btn btn-ghost" onclick="window.open('https://wa.me/260961111468?text=Hi,%20I%20need%20business%20growth%20strategy%20consulting','_blank')">
+              Start Strategy
+            </button>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🎓</div>
+            <h3>Executive Coaching</h3>
+            <p>One-on-one coaching for leaders who want to elevate their influence and drive organizational transformation.</p>
+            <ul>
+              <li>Leadership development</li>
+              <li>Personal branding strategies</li>
+              <li>Executive presence training</li>
+              <li>Decision-making frameworks</li>
+            </ul>
+            <button class="btn btn-ghost" onclick="window.open('https://wa.me/260961111468?text=Hi,%20I%20want%20executive%20coaching','_blank')">
+              Start Coaching
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+      <div class="container">
+        <h2>What Leaders Say</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "Kalungwe transformed our sales approach completely. Our revenue increased by 150% in just 6 months after implementing his strategies."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-name">Sarah Mwamba</div>
+              <div class="author-title">CEO, TechVenture Ltd</div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "The keynote was electrifying. Our team left with renewed energy and clear action plans. Best investment we made this year."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-name">James Phiri</div>
+              <div class="author-title">Managing Director, Innovation Hub</div>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              "His business growth strategies helped us expand into 3 new markets and double our client base within a year."
+            </div>
+            <div class="testimonial-author">
+              <div class="author-name">Grace Banda</div>
+              <div class="author-title">Founder, Strategic Solutions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="final-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Make Your Business Unstoppable?</h2>
+          <p class="cta-text">
+            Whether you're planning a high-energy event, need sales frameworks tailored for your team, or want a no-fluff motivational presentation that will ignite your organization — <strong>Kalungwe Mwenshi will bring it!</strong>
+          </p>
+          <div class="cta-buttons">
+            <button class="btn btn-primary btn-xl" onclick="window.open('https://wa.me/260961111468?text=Hi,%20I%20want%20to%20hire%20Kalungwe%20for%20my%20organization','_blank')">
+              Hire Kalungwe Now
+            </button>
+            <div class="contact-info">
+              <p>Or call directly: <a href="tel:+260961111468">+260 961 111 468</a></p>
             </div>
           </div>
         </div>
@@ -334,14 +560,36 @@
 
   </main>
 
-  <footer>
-    <div class="container">
-      <div class="small">© "The Dot-com Entrepreneur" — Kalungwe Mwenshi — <span id="year"></span></div>
-      <div class="small">Follow: <a href="#">X</a> · <a href="#">LinkedIn</a> · <a href="#">YouTube</a></div>
-    </div>
-  </footer>
+  
+  <script>
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
 
-  <!-- Modal skeleton for booking -->
+    // Add fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+    <!--hire end-->
+
+    <!-- Modal skeleton for booking -->
   <div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal" role="document">
       <h3 id="modalTitle">Book a Talk</h3>
@@ -358,15 +606,49 @@
     </div>
   </div>
 
-  <!-- WhatsApp Floating Button -->
-  <div class="whatsapp-wrapper">
-    <a href="https://wa.me/260961111468?text=Hi,%20I%20am%20interested" target="_blank" class="whatsapp-float">
-      <img src="WhatsApp.svg.webp" alt="WhatsApp" />
-    </a>
-    <a href="https://wa.me/260961111468?text=Hi,%20I%20am%20interested" target="_blank" class="whatsapp-text">
-      Talk to me direct
+  <!-- Updated WhatsApp Floating Widget -->
+  <div class="whatsapp-widget">
+    <a href="https://wa.me/260961111468?text=Hi,%20I%20am%20interested" target="_blank" class="whatsapp-container">
+      <div class="whatsapp-text">Talk to me direct</div>
+      <div class="whatsapp-icon">
+        <img src="WhatsApp.svg.webp" alt="WhatsApp" />
+      </div>
     </a>
   </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="logos">
+        <div class="small2">
+          <img src="images/flogo1.png" alt="The Dotcom Entrepreneur Logo" class="footer-logo2" />
+        </div>
+        <div class="small2">
+          <img src="images/flogo2.png" alt="The Dotcom Entrepreneur Logo" class="footer-logo2" />
+        </div>
+        <div class="small2">
+          <img src="images/flogo3.png" alt="The Dotcom Entrepreneur Logo" class="footer-logo2" />
+        </div>
+        <div class="small2">
+          <img src="images/flogo4.png" alt="The Dotcom Entrepreneur Logo" class="footer-logo2" />
+        </div>
+        <div class="small2">
+          <img src="images/flogo5.png" alt="The Dotcom Entrepreneur Logo" class="footer-logo2" />
+        </div>
+      </div>
+  
+      <div style="font-weight: 700px;" class="small3">
+        © "The Dot-com Entrepreneur" — KM — <span id="year"></span>
+      </div>
+      <div class="small3">
+        Follow: 
+        <a href="#">X</a> · 
+        <a href="#">LinkedIn</a> · 
+        <a href="#">YouTube</a>
+      </div>
+    </div>
+  </footer>
+  
 
   <!-- Link to external JS (script.js) -->
   <script src="script.js"></script>
