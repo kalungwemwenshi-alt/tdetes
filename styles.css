@@ -123,15 +123,7 @@ header {
   transition: var(--transition);
   width: 100%;
 }
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+
 
 .brand {
   display: flex;
