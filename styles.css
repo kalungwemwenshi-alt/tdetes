@@ -206,7 +206,7 @@ header {
   position: relative;
 }
 
-.nav-link {
+.nav {
   display: block;
   padding: 1rem 1.5rem;
   text-decoration: none;
@@ -219,13 +219,13 @@ header {
   border-radius: var(--border-radius-small);
 }
 
-.nav-link:hover,
+.nav:hover,
 .nav-link:focus {
   color: var(--primary-gold);
   background: rgba(212, 175, 55, 0.08);
 }
 
-.nav-link.active {
+.nav.active {
   color: var(--primary-gold);
   background: rgba(212, 175, 55, 0.12);
 }
@@ -244,8 +244,6 @@ header {
   border-radius: 1px;
 }
 
-.nav-link:hover::after,
-.nav-link:focus::after,
 .nav-link.active::after {
   width: 60%;
 }
@@ -277,7 +275,7 @@ header {
 
 /* Mobile Menu Toggle */
 .mobile-toggle {
-  display: none;
+  display: 100%;
   flex-direction: column;
   justify-content: center;
   align-items: center;
