@@ -108,3 +108,43 @@ function nextSlide() {
 // Start the carousel
 showSlide(currentIndex);
 setInterval(nextSlide, 4000); // change slide every 4 seconds
+
+// Mobile Navigation Toggle Script
+document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('nav');
+    
+    if (navToggle && nav) {
+        navToggle.addEventListener('click', function() {
+            nav.classList.toggle('show');
+            
+            // Optional: Change hamburger icon to X when open
+            if (nav.classList.contains('show')) {
+                navToggle.innerHTML = '✕';
+                navToggle.setAttribute('aria-expanded', 'true');
+            } else {
+                navToggle.innerHTML = '☰';
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Close menu when clicking on a nav link
+        const navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('show');
+                navToggle.innerHTML = '☰';
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!nav.contains(event.target) && !navToggle.contains(event.target)) {
+                nav.classList.remove('show');
+                navToggle.innerHTML = '☰';
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+});
