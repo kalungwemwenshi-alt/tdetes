@@ -111,7 +111,7 @@ p {
   width: 100%;
 }
 
-/* Header and Navigation */
+/* Header and Navigation - FIXED */
 header {
   position: sticky;
   top: 0;
@@ -123,7 +123,17 @@ header {
   transition: var(--transition);
   width: 100%;
 }
-
+
+/* Header container to manage layout */
+.header-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
 
 .brand {
   display: flex;
@@ -147,13 +157,14 @@ header {
   box-shadow: var(--shadow-light);
   font-family: 'Playfair Display', serif;
 }
+
 .logo img {
-  height: 50px;   /* adjust as needed */
+  height: 50px;
   width: 50px;
-  border-radius: 50%; /* makes it circular */
+  border-radius: 50%;
 }
 
-/* Keep your existing nav styles */
+/* Desktop Navigation */
 nav {
   display: flex;
   gap: 2rem;
@@ -189,44 +200,90 @@ nav a:hover::after {
   width: 100%;
 }
 
-/* --- Responsive menu styles --- */
+/* Mobile Toggle Button */
 .nav-toggle {
-  display: none; /* hidden on desktop */
-  font-size: 2rem;
+  display: none;
+  font-size: 1.8rem;
   background: none;
   border: none;
   color: var(--dark-gray);
   cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+  transition: var(--transition);
 }
 
-/* Mobile view */
+.nav-toggle:hover {
+  color: var(--primary-gold);
+}
+
+/* Mobile Navigation Styles */
 @media (max-width: 768px) {
-  nav {
-    display: none; /* hide links on mobile by default */
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 1rem;
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  .header-container {
+    padding: 0 1rem;
   }
 
-  nav.show {
-    display: flex; /* show when toggled */
-  }
-
+  /* Show hamburger button on mobile */
   .nav-toggle {
-    display: block; /* show hamburger on mobile */
+    display: block;
+  }
+
+  /* Hide navigation by default on mobile */
+  nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 1rem;
+    border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+    box-shadow: var(--shadow-medium);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    z-index: 999;
+  }
+
+  /* Show navigation when toggled */
+  nav.show {
+    display: flex;
+  }
+
+  /* Mobile nav links styling */
+  nav a {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  nav a:last-child {
+    border-bottom: none;
+  }
+
+  nav a::after {
+    display: none; /* Remove underline animation on mobile */
+  }
+
+  nav a:hover {
+    background: rgba(212, 175, 55, 0.05);
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .brand {
+    font-size: x-large; /* Adjust brand size on mobile */
   }
 }
-
 
 /* Hero Section */
 .hero {
   background: 
-    linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.6)), /* dark overlay */
-    url("images/bannernu1.png") center/cover no-repeat; /* background image */
+    linear-gradient(rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.6)),
+    url("images/bannernu1.png") center/cover no-repeat;
   color: var(--primary-white);
   padding: 4rem 0;
   text-align: center;
@@ -234,7 +291,6 @@ nav a:hover::after {
   overflow: hidden;
   width: 100%;
 }
-
 
 .hero::before {
   content: '';
@@ -379,7 +435,7 @@ nav a:hover::after {
   display: flex;
   align-items: center;
   animation: logoScroll 20s linear infinite;
-  width: calc(200px * 15); /* 5 logos × 3 sets × 200px width */
+  width: calc(200px * 15);
   gap: 0;
 }
 
@@ -403,7 +459,7 @@ nav a:hover::after {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-200px * 5 - 2rem * 5)); /* Move by one set of logos */
+    transform: translateX(calc(-200px * 5 - 2rem * 5));
   }
 }
 
@@ -620,10 +676,9 @@ section h2 {
 
 .aboutcard {
   display: flex;
-  flex-direction: column; /* stack items */
-  align-items: center;    /* center horizontally */
+  flex-direction: column;
+  align-items: center;
 }
-
 
 .book-card:hover {
   transform: translateY(-10px);
@@ -741,37 +796,34 @@ input:focus, textarea:focus {
   box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
 }
 
-/* Main wrapper (floating bottom-right if needed) */
+/* WhatsApp Widget */
 .whatsapp-widget {
   position: fixed;
   bottom: 20px;
   right: 20px;
 }
 
-/* Container to hold icon + text */
 .whatsapp-container {
   display: flex;
   align-items: center;
-  gap: 0.75rem; /* spacing between icon and text */
+  gap: 0.75rem;
 }
 
-/* WhatsApp text box (no pill) */
 .whatsapp-text {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   padding: 0.75rem 1rem;
   font-size: 1.0rem;
-  border-radius: 30px; /* normal rounded corners */
+  border-radius: 30px;
   background: #0ed467;
   color: #ffffff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-/* WhatsApp icon (standalone circle with waves) */
 .whatsapp-icon {
   position: relative;
   width: 50px;
   height: 50px;
-  border-radius: 50%; /* force circle */
+  border-radius: 50%;
   background: #25d366;
   display: flex;
   align-items: center;
@@ -779,14 +831,12 @@ input:focus, textarea:focus {
   overflow: visible;
 }
 
-/* Logo image inside circle */
 .whatsapp-icon img {
   width: 28px;
   height: 28px;
   z-index: 2;
 }
 
-/* Wave / pulse animation */
 .whatsapp-icon::before,
 .whatsapp-icon::after {
   content: "";
@@ -812,7 +862,6 @@ input:focus, textarea:focus {
     opacity: 0;
   }
 }
-
 
 /* Modal */
 .modal-backdrop {
@@ -880,6 +929,38 @@ footer a:hover {
   color: var(--gold-hover);
 }
 
+footer .logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.small2 {
+  flex: 0 1 auto;
+}
+
+.footer-logo2 {
+  height: 40px;
+  width: auto;
+}
+
+.small3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  width: auto;
+}
+
+.footer-logo2 {
+  height: 80px;
+  width: auto;
+  margin-bottom: 8px;
+}
+
 /* Animations */
 .fade-in {
   opacity: 0;
@@ -896,20 +977,10 @@ footer a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .nav {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-  }
-  
-  nav {
-    gap: 1.5rem;
-  }
-  
   .hero {
     padding: 2rem 0;
   }
-  
+
   .marquee-content span {
     font-size: 1rem;
   }
@@ -917,27 +988,27 @@ footer a:hover {
   .trusted-section {
     padding: 2rem 0;
   }
-  
+
   .trusted-section h2 {
     font-size: 1.5rem;
     letter-spacing: 1px;
   }
-  
+
   .logo-slider {
     margin: 1.5rem auto 0;
     padding: 1.5rem 0;
   }
-  
+
   .logo-track img {
     width: 150px;
     height: 60px;
     margin-right: 1.5rem;
   }
-  
+
   .logo-track {
     width: calc(150px * 15 + 1.5rem * 15);
   }
-  
+
   @keyframes logoScroll {
     0% {
       transform: translateX(0);
@@ -946,80 +1017,76 @@ footer a:hover {
       transform: translateX(calc(-150px * 5 - 1.5rem * 5));
     }
   }
-  
+
   section {
     padding: 3rem 0;
   }
-  
+
   .grid-3 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .resources-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .catalog-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
   }
-  
+
   .media {
     grid-template-columns: 1fr;
   }
-  
+
   .testimonials {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   footer .container {
     flex-direction: column;
     text-align: center;
     gap: 1rem;
   }
-  
- 
-  
+
   .container {
     padding: 0 1rem;
   }
-  
+
   .card {
     padding: 1.5rem;
   }
-  
+
   .modal {
     padding: 2rem;
     width: 95%;
   }
 }
 
-
-
 @media (max-width: 480px) {
   .marquee-content span {
     font-size: 0.9rem;
     gap: 2rem;
   }
-  
+
   .logo-track img {
     width: 120px;
     height: 50px;
     margin-right: 1rem;
   }
-  
+
   .logo-track {
     width: calc(120px * 15 + 1rem * 15);
   }
-  
+
   @keyframes logoScroll {
     0% {
       transform: translateX(0);
@@ -1028,16 +1095,16 @@ footer a:hover {
       transform: translateX(calc(-120px * 5 - 1rem * 5));
     }
   }
-  
+
   .testimonials {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .testimonial {
     padding: 1.5rem;
   }
-  
+
   .btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
@@ -1051,55 +1118,14 @@ footer a:hover {
   nav {
     display: none !important;
   }
-  
+
   body {
     background: white !important;
     color: black !important;
   }
-  
+
   .hero {
     background: white !important;
     color: black !important;
   }
-}
-
-footer {
-  padding: 20px;
-  background: #000;   /* example */
-  color: #fff;
-  text-align: center;
-}
-
-footer .logos {
-  display: flex;
-  justify-content: center;  /* center them horizontally */
-  align-items: center;      /* align vertically */
-  gap: 20px;                /* spacing between logos */
-  flex-wrap: wrap;          /* allow wrapping on small screens */
-  margin-bottom: 20px;
-}
-
-.small2 {
-  flex: 0 1 auto;  /* let logos size naturally */
-}
-
-.footer-logo2 {
-  height: 40px;   /* adjust size */
-  width: auto;
-}
-
-
-.small3 {
-  display: flex;
-  flex-direction: row; /* stack items vertically */
-  align-items: center;    /* center image + text */
-  text-align: center;
-  width: auto;
-}
-
-
-.footer-logo2 {
-  height: 80px;   /* control image size */
-  width: auto;
-  margin-bottom: 8px; /* spacing between image and text */
 }
