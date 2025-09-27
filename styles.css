@@ -457,7 +457,7 @@ section:nth-child(even) {
 
 .logo-track {
   display: flex;
-  animation: slide 10s linear infinite;
+  animation: slide 5s linear infinite;
   gap: 3rem;
 }
 
