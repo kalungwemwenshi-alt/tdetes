@@ -96,8 +96,8 @@ p {
 }
 
 .small {
-  font-size: 0.875rem;
-  color: #666;
+  font-size: 0.675rem;
+  color: #ffffff;
 }
 
 .small2 {
@@ -141,7 +141,7 @@ header {
   gap: 12px;
   color: #FFD700;
   font-weight: 700;
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  font-size: clamp(0.875rem, 2.2vw, 1.0rem);
   font-family: 'Playfair Display', serif;
 }
 
@@ -253,10 +253,10 @@ main {
 
 /* Marquee Banner */
 .marquee-banner {
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+  background: gold;
   border-bottom: 2px solid #FFD700;
   overflow: hidden;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 .marquee {
@@ -266,7 +266,7 @@ main {
 .marquee-content {
   display: inline-block;
   animation: scroll-left 30s linear infinite;
-  color: #FFD700;
+  color: #1a0000;
   font-weight: 600;
   font-size: clamp(1rem, 2vw, 1.2rem);
 }
