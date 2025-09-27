@@ -457,14 +457,14 @@ section:nth-child(even) {
 
 .logo-track {
   display: flex;
-  animation: slide 20s linear infinite;
+  animation: slide 10s linear infinite;
   gap: 3rem;
 }
 
 .logo-track img {
   height: 60px;
   width: auto;
-  filter: grayscale(100%) brightness(0.8);
+  filter: grayscale(10%) brightness(0.8);
   transition: all 0.3s ease;
 }
 
