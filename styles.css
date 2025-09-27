@@ -778,9 +778,9 @@ cite {
 .whatsapp-container {
   display: flex;
   align-items: center;
-  background: #25d366;
+  background: #000000;
   color: white;
-  padding: 1rem 1.5rem;
+  padding: 0.2rem 1.0rem;
   border-radius: 50px;
   text-decoration: none;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
@@ -798,9 +798,47 @@ cite {
   font-size: 0.9rem;
 }
 
+.whatsapp-icon {
+  position: relative;
+  display: inline-block;
+}
+
 .whatsapp-icon img {
-  width: 24px;
-  height: 24px;
+  width: 29px;
+  height: 29px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Waves animation effect */
+.whatsapp-icon::before,
+.whatsapp-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.4); /* WhatsApp green with transparency */
+  transform: translate(-50%, -50%) scale(0.5);
+  z-index: 1;
+  animation: wave 2s infinite ease-out;
+}
+
+.whatsapp-icon::after {
+  animation-delay: 1s; /* second ripple delay */
+}
+
+@keyframes wave {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
 }
 
 /* Modal */
