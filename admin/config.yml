@@ -1,9 +1,10 @@
 backend:
   name: github
-  repo: yourusername/your-repo-name  # 👈 replace with your GitHub repo
+  repo: kalungwemwenshi-alt/tdetes 
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
   auth_scope: repo
-  open_authoring: false
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
