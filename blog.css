@@ -1,6 +1,19 @@
 /* Blog Page CSS for The Dotcom Entrepreneur - blog.css */
+/* Redesigned for improved contrast and accessibility */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+/* Color system */
+:root{
+  --bg: #f5f7fa;            /* page background */
+  --surface: #ffffff;       /* card / post background */
+  --text: #111827;          /* main text */
+  --muted: #586069;         /* secondary text */
+  --accent: #FFD700;        /* primary brand accent (gold) */
+  --accent-2: #FFA500;      /* secondary accent (orange) */
+  --header-bg: rgba(6,6,6,0.95);
+  --link: #0b5cff;          /* accessible link color */
+  --card-border: rgba(0,0,0,0.04);
+  --shadow: rgba(15, 23, 42, 0.06);
+}
 
 /* Base styles (if not already included) */
 * {
@@ -12,18 +25,6 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-}
-
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.7;
-  color: #333;
-  background: #ffffff;
-  overflow-x: hidden;
-}
-
-/* Reading Progress Bar */
-html {
   --scroll-progress: 0%;
 }
 
@@ -34,9 +35,19 @@ html::before {
   left: 0;
   width: var(--scroll-progress);
   height: 3px;
-  background: linear-gradient(90deg, #FFD700, #FFA500);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
   z-index: 1001;
   transition: width 0.1s ease;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -47,14 +58,14 @@ html::before {
 
 /* Header & Navigation (matching main site) */
 header {
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
+  background: var(--header-bg);
+  backdrop-filter: blur(6px);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  border-bottom: 2px solid #FFD700;
+  border-bottom: 2px solid var(--accent);
 }
 
 .nav {
@@ -70,7 +81,7 @@ header {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #FFD700;
+  color: var(--accent);
   font-weight: 700;
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   font-family: 'Playfair Display', serif;
@@ -80,14 +91,15 @@ header {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #FFD700;
+  border: 2px solid var(--accent);
 }
 
 .small {
   font-size: 0.875rem;
-  color: #ccc;
+  color: #d1d5db;
 }
 
+/* Nav links: ensure high contrast on both dark header and light contexts */
 .nav-links {
   display: flex;
   align-items: center;
@@ -95,15 +107,16 @@ header {
 }
 
 .nav-links a {
-  color: #fff;
+  color: #fff; /* on dark header this is fine */
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.18s ease;
   position: relative;
   padding: 0.5rem 0;
 }
 
+/* underline hover uses accent */
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -111,15 +124,18 @@ header {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #FFD700, #FFA500);
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  transition: width 0.25s ease;
 }
 
-.nav-links a:hover {
-  color: #FFD700;
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--accent);
+  outline: none;
 }
 
-.nav-links a:hover::after {
+.nav-links a:hover::after,
+.nav-links a:focus::after {
   width: 100%;
 }
 
@@ -128,7 +144,7 @@ header {
   display: none;
   background: none;
   border: none;
-  color: #FFD700;
+  color: var(--accent);
   font-size: 1.8rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -136,7 +152,7 @@ header {
 }
 
 .nav-toggle:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .hamburger {
@@ -154,14 +170,14 @@ header {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.98);
-    backdrop-filter: blur(10px);
+    background: rgba(6,6,6,0.98);
+    backdrop-filter: blur(8px);
     flex-direction: column;
     padding: 2rem;
     gap: 1.5rem;
     transform: translateY(-100vh);
     transition: transform 0.3s ease;
-    border-top: 2px solid #FFD700;
+    border-top: 2px solid var(--accent);
   }
   
   .nav-links.nav-active {
@@ -169,11 +185,12 @@ header {
   }
   
   .nav-links a {
-    font-size: 1.2rem;
-    padding: 1rem 0;
+    font-size: 1.1rem;
+    padding: 0.85rem 0;
     text-align: center;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
     width: 100%;
+    color: #fff;
   }
   
   .nav-toggle.active .hamburger {
@@ -183,7 +200,7 @@ header {
 
 /* Main Content */
 .blog-page {
-  margin-top: 90px;
+  margin-top: 88px;
   padding: 2rem 20px;
 }
 
@@ -193,11 +210,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.3;
   margin-bottom: 1rem;
+  color: var(--text);
 }
 
 h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 50%, #FF8C00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -206,61 +224,65 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  color: #000;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  color: var(--text);
+  margin-bottom: 1rem;
   position: relative;
 }
 
 h3 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  color: #000;
-  margin-bottom: 1rem;
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+  color: var(--text);
+  margin-bottom: 0.8rem;
 }
 
 p {
   margin-bottom: 1.2rem;
   font-size: clamp(1rem, 2vw, 1.125rem);
   line-height: 1.8;
-  color: #444;
+  color: var(--muted);
 }
 
 /* Blog Hero Section */
 .blog-hero {
   text-align: center;
   padding: 3rem 0;
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  margin: 0 -20px 3rem;
+  background: linear-gradient(135deg, #f2f4f7 0%, var(--bg) 100%);
+  margin: 0 -20px 2.5rem;
+  color: var(--text);
 }
 
 .blog-hero h1 {
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
+  color: unset; /* gradient text already applied via h1 rule */
 }
 
 .subtitle {
-  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
-  color: #666;
-  max-width: 600px;
+  font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+  color: var(--muted);
+  max-width: 680px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
 /* Blog Content Section */
 .blog-content {
-  max-width: 800px;
+  max-width: 840px;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 /* Blog Post Styling */
 .blog-post {
-  background: #fff;
-  border-radius: 20px;
-  margin-bottom: 3rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
+  background: var(--surface);
+  border-radius: 18px;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 10px 30px var(--shadow);
+  transition: all 0.25s ease;
+  border: 1px solid var(--card-border);
   overflow: hidden;
   position: relative;
+  color: var(--text);
 }
 
 .blog-post::before {
@@ -270,13 +292,13 @@ p {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #FFD700, #FFA500);
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
 }
 
 .blog-post:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-  border-color: rgba(255, 215, 0, 0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+  border-color: rgba(255, 215, 0, 0.16);
 }
 
 .blog-post img {
@@ -288,52 +310,54 @@ p {
 }
 
 .blog-post:hover img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .blog-post .content {
-  padding: 2.5rem;
+  padding: 2.25rem;
+  color: var(--text);
 }
 
 .blog-post h2 {
-  color: #000;
-  font-size: clamp(1.5rem, 3vw, 1.8rem);
-  margin-bottom: 1.5rem;
-  line-height: 1.4;
+  color: var(--text);
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
+  margin-bottom: 0.9rem;
+  line-height: 1.3;
 }
 
+/* remove underline from h2 (preserve visual weight) */
 .blog-post h2::after {
-  display: none; /* Remove the underline from h2 in blog posts */
+  display: none;
 }
 
 .blog-post p {
-  color: #555;
-  margin-bottom: 1.2rem;
-  font-size: 1.1rem;
-  line-height: 1.7;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
 .blog-post p strong {
-  color: #000;
-  font-weight: 600;
+  color: var(--text);
+  font-weight: 700;
 }
 
 /* Lists Styling */
 .blog-post ol,
 .blog-post ul {
   margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .blog-post li {
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
+  margin-bottom: 0.7rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--muted);
 }
 
 .blog-post li strong {
-  color: #000;
+  color: var(--text);
   font-weight: 600;
 }
 
@@ -351,35 +375,38 @@ p {
   content: '•';
   position: absolute;
   left: 0;
-  color: #FFD700;
+  color: var(--accent);
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 /* Buttons */
 .btn {
   display: inline-block;
-  padding: 0.75rem 2rem;
+  padding: 0.7rem 1.75rem;
   border: none;
-  border-radius: 50px;
-  font-weight: 600;
+  border-radius: 999px;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.22s ease;
   font-size: 1rem;
   text-align: center;
   position: relative;
   overflow: hidden;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.06);
 }
 
 .btn::before {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -110%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
   transition: left 0.5s;
 }
 
@@ -388,25 +415,25 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
-  color: #000;
-  border: 2px solid transparent;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #111;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(255, 215, 0, 0.08);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #FFA500 0%, #FFD700 100%);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 165, 0, 0.12);
 }
 
 /* Blog CTA Section */
 .blog-cta {
-  background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #0b0b0b 0%, #161616 100%);
   color: #fff;
   padding: 3rem 2rem;
-  border-radius: 20px;
+  border-radius: 16px;
   text-align: center;
-  margin: 4rem 0 3rem;
+  margin: 3.5rem 0 2.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -418,8 +445,8 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23FFD700" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23FFD700" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.3;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23FFD700" opacity="0.06"/><circle cx="75" cy="75" r="1" fill="%23FFD700" opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.12;
   z-index: 1;
 }
 
@@ -429,29 +456,29 @@ p {
 }
 
 .blog-cta h3 {
-  color: #FFD700;
-  font-size: clamp(1.8rem, 4vw, 2.3rem);
-  margin-bottom: 1rem;
+  color: var(--accent);
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  margin-bottom: 0.6rem;
   font-family: 'Playfair Display', serif;
 }
 
 .blog-cta p {
-  color: #ccc;
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-  max-width: 500px;
+  color: #d1d5db;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  max-width: 560px;
   margin-left: auto;
   margin-right: auto;
 }
 
 /* Footer */
 footer {
-  background: #000;
-  color: #fff;
+  background: #0b0b0b;
+  color: #e6e6e6;
   padding: 3rem 0 2rem;
-  border-top: 2px solid #FFD700;
+  border-top: 2px solid var(--accent);
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 3.5rem;
 }
 
 footer .container > div {
@@ -459,20 +486,20 @@ footer .container > div {
 }
 
 footer a {
-  color: #ccc;
+  color: #cbd5e1;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 footer a:hover {
-  color: #FFD700;
+  color: var(--accent);
 }
 
 /* Animations */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.6s ease;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
 }
 
 .fade-in-visible {
@@ -482,21 +509,21 @@ footer a:hover {
 
 /* Enhanced Blog Post Animations */
 .blog-post {
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 0.5s ease forwards;
 }
 
 .blog-post:nth-child(even) {
-  animation-delay: 0.1s;
+  animation-delay: 0.06s;
 }
 
 .blog-post:nth-child(odd) {
-  animation-delay: 0.2s;
+  animation-delay: 0.12s;
 }
 
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -506,26 +533,26 @@ footer a:hover {
 
 /* Reading Experience Enhancements */
 .blog-post .content p:first-of-type {
-  font-size: 1.2rem;
-  color: #333;
-  font-weight: 500;
+  font-size: 1.12rem;
+  color: var(--text);
+  font-weight: 600;
 }
 
 .blog-post .content p:first-of-type::first-letter {
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: 700;
-  color: #FFD700;
+  color: var(--accent);
   float: left;
-  line-height: 2.5rem;
-  margin: 0.2rem 0.5rem 0 0;
+  line-height: 2.4rem;
+  margin: 0.15rem 0.5rem 0 0;
   font-family: 'Playfair Display', serif;
 }
 
 /* Quote Styling for Emphasis */
 .blog-post em {
   font-style: italic;
-  color: #FFD700;
-  font-weight: 500;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 /* Responsive Design */
@@ -537,15 +564,15 @@ footer a:hover {
   
   .blog-hero {
     padding: 2rem 1rem;
-    margin: 0 -15px 2rem;
+    margin: 0 -15px 1.8rem;
   }
   
   .blog-post {
-    margin-bottom: 2rem;
+    margin-bottom: 1.6rem;
   }
   
   .blog-post .content {
-    padding: 2rem;
+    padding: 1.6rem;
   }
   
   .blog-post img {
@@ -554,7 +581,7 @@ footer a:hover {
   
   .blog-cta {
     padding: 2rem 1.5rem;
-    margin: 3rem 0 2rem;
+    margin: 2rem 0 1.5rem;
   }
   
   .blog-post ol,
@@ -563,8 +590,8 @@ footer a:hover {
   }
   
   .blog-post .content p:first-of-type::first-letter {
-    font-size: 2.5rem;
-    line-height: 2rem;
+    font-size: 2.2rem;
+    line-height: 1.9rem;
   }
 }
 
@@ -578,20 +605,20 @@ footer a:hover {
   }
   
   .blog-post .content {
-    padding: 1.5rem;
+    padding: 1.2rem;
   }
   
   .blog-post img {
-    height: 180px;
+    height: 170px;
   }
   
   .blog-cta {
-    padding: 2rem 1rem;
+    padding: 1.5rem 1rem;
   }
   
   .btn {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
   }
   
   .blog-post ol,
@@ -604,8 +631,8 @@ footer a:hover {
   }
   
   .blog-post .content p:first-of-type::first-letter {
-    font-size: 2rem;
-    line-height: 1.5rem;
+    font-size: 1.9rem;
+    line-height: 1.45rem;
     margin-right: 0.3rem;
   }
 }
@@ -618,6 +645,7 @@ footer a:hover {
   
   .blog-page {
     margin-top: 0 !important;
+    background: #fff !important;
   }
   
   .blog-post {
@@ -625,6 +653,8 @@ footer a:hover {
     border: 1px solid #ddd !important;
     margin-bottom: 2rem !important;
     page-break-inside: avoid;
+    background: #fff;
+    color: #000;
   }
   
   .blog-post img {
@@ -674,46 +704,47 @@ footer a:hover {
 a:focus,
 button:focus,
 .btn:focus {
-  outline: 2px solid #FFD700;
-  outline-offset: 2px;
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
 }
 
-/* Dark Mode Media Query (Optional Enhancement) */
+/* Dark Mode Media Query */
 @media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1720;
+    --surface: #0b1220;
+    --text: #e6eef8;
+    --muted: #bfcbdc;
+    --card-border: rgba(255,255,255,0.04);
+    --shadow: rgba(2,6,23,0.6);
+  }
+
   body {
-    background: #1a1a1a;
-    color: #e0e0e0;
+    background: var(--bg);
+    color: var(--text);
   }
   
   .blog-post {
-    background: #2a2a2a;
-    color: #e0e0e0;
+    background: var(--surface);
+    color: var(--text);
   }
   
   .blog-post p,
   .blog-post li {
-    color: #ccc;
+    color: var(--muted);
   }
   
   .blog-post h2 {
-    color: #FFD700;
+    color: var(--accent);
   }
   
   .blog-hero {
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, #0b1220 0%, #08101a 100%);
   }
   
   .subtitle {
-    color: #bbb;
+    color: #cbd5e1;
   }
-}
-
-/* Enhanced Readability */
-.blog-post .content {
-  font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Improved List Spacing */
@@ -729,18 +760,19 @@ button:focus,
 
 /* Blog Post Hover Effects */
 .blog-post:hover .content h2 {
-  color: #FFD700;
-  transition: color 0.3s ease;
+  color: var(--accent);
+  transition: color 0.18s ease;
 }
 
 /* Mobile Menu Enhancement */
 @media (max-width: 768px) {
   .nav-links a {
-    transition: all 0.3s ease;
+    transition: all 0.18s ease;
   }
   
   .nav-links a:hover {
-    background: rgba(255, 215, 0, 0.1);
-    border-radius: 5px;
+    background: rgba(255, 215, 0, 0.08);
+    border-radius: 6px;
+    color: #111;
   }
 }
