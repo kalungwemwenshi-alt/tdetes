@@ -732,16 +732,31 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="header">
-    <div class="header-content">
-      <a href="index.html" class="logo">
-        <img src="images/favicon.png" alt="Logo">
-        <span>The Dot-com Entrepreneur</span>
-      </a>
+  <header class="fade-in">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <img src="images/favicon.png" alt="The Dot-com Entrepreneur Logo">
+        </div>        
+        <div>
+          <div>The Dotcom Entrepreneur</div>
+          <div class="small">Kalungwe Mwenshi - Speaker · Coach</div>
+        </div>
+      </div>
     
+      <!-- Mobile toggle button -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger">☰</span>
+      </button>
     
       <!-- Nav links -->
-      <button class="cta-header" onclick="window.location.href='index.html'">Main Website</button>
+      <nav id="nav-links" class="nav-links" aria-label="Primary navigation">
+        <a href="index.html">Go to Main Site</a>
+        <a href="#about">About</a>
+        <a href="hire.html">Hire</a>
+        <a href="#services">Coaching</a>
+        <a href="blog.html">Blog</a>
+      </nav>
     </div>
   </header>
 
