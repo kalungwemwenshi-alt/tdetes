@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales & Persuasion Masterclass - The Dot-com Entrepreneur</title>
+  <meta name="description" content="Master the art of selling with The Sales and Persuasion Masterclass. Join December's exclusive cohort and transform your sales game with proven frameworks from top 1% performers.">
+  <link rel="icon" href="images/favicon.png" type="image/x-icon">
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+    
+    :root {
+      --primary-red: #C41E3A;
+      --primary-black: #000000;
+      --primary-white: #FFFFFF;
+      --primary-gold: #FFD700;
+      --accent-orange: #FFA500;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #000;
+      overflow-x: hidden;
+    }
+    
+    /* Header */
+    .header {
+      background: rgba(0, 0, 0, 0.98);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      border-bottom: 2px solid var(--primary-gold);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--primary-gold);
+      text-decoration: none;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+    
+    .logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid var(--primary-gold);
+    }
+    
+    .cta-header {
+      background: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-orange) 100%);
+      color: #000;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    
+    .cta-header:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #000000 100%);
+      color: #fff;
+      padding: 4rem 0 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 30% 50%, rgba(196, 30, 58, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 70% 80%, rgba(255, 215, 0, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary-red) 0%, #8B1429 100%);
+      color: #fff;
+      padding: 0.6rem 1.8rem;
+      border-radius: 50px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 15px rgba(196, 30, 58, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900;
+      color: var(--primary-red);
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      margin-bottom: 0.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 800;
+      color: var(--primary-gold);
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .hero-tagline {
+      font-size: 1.3rem;
+      color: #e8e8e8;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      font-style: italic;
+    }
+    
+    .hero-image {
+      position: relative;
+    }
+    
+    .hero-image img {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(196, 30, 58, 0.5);
+      border: 4px solid var(--primary-red);
+    }
+    
+    .limited-badge {
+      position: absolute;
+      top: -15px;
+      right: 10px;
+      background: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-orange) 100%);
+      color: #000;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      font-weight: 800;
+      transform: rotate(12deg);
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
+      animation: pulse 2s infinite;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 3px solid #000;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: rotate(12deg) scale(1); }
+      50% { transform: rotate(12deg) scale(1.08); }
+    }
+    
+    /* Pricing Section */
+    .pricing-box {
+      background: rgba(196, 30, 58, 0.15);
+      border: 3px solid var(--primary-red);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    
+    .price-original {
+      text-decoration: line-through;
+      color: #ffffff;
+      font-size: 2rem;
+      margin-right: 1rem;
+      font-weight: 600;
+    }
+    
+    .price-current {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--primary-gold);
+      font-family: 'Playfair Display', serif;
+      display: block;
+      margin: 1rem 0;
+    }
+    
+    .savings {
+      background: var(--primary-gold);
+      color: #000;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+      border: none;
+      text-align: center;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-orange) 100%);
+      color: #000;
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 215, 0, 0.5);
+    }
+    
+    .btn-ghost {
+      background: transparent;
+      color: var(--primary-gold);
+      border: 2px solid var(--primary-gold);
+    }
+    
+    .btn-ghost:hover {
+      background: var(--primary-gold);
+      color: #000;
+    }
+    
+    /* Benefits Section */
+    .benefits-section {
+      background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
+      padding: 5rem 0;
+      color: #fff;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      color: var(--primary-gold);
+      text-align: center;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+    }
+    
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .benefit-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 215, 0, 0.2);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+    
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-gold);
+      box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+    }
+    
+    .benefit-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .benefit-card h3 {
+      color: var(--primary-gold);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .benefit-card p {
+      color: #e8e8e8;
+      line-height: 1.7;
+    }
+    
+    /* What You'll Learn */
+    .curriculum-section {
+      background: #fff;
+      padding: 5rem 0;
+      color: #000;
+    }
+    
+    .curriculum-section .section-title {
+      color: var(--primary-red);
+    }
+    
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    
+    .curriculum-item {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border-left: 4px solid var(--primary-red);
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .curriculum-item:hover {
+      transform: translateX(5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .curriculum-item h4 {
+      color: var(--primary-red);
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .curriculum-item h4::before {
+      content: '✓';
+      color: var(--primary-gold);
+      font-weight: 900;
+      font-size: 1.5rem;
+    }
+    
+    /* Bonus Section */
+    .bonus-section {
+      background: linear-gradient(135deg, var(--primary-red) 0%, #000000 100%);
+      color: #fff;
+      padding: 5rem 0;
+      text-align: center;
+    }
+    
+    .bonus-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .bonus-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      color: var(--primary-gold);
+      margin-bottom: 2rem;
+    }
+    
+    .bonus-list {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: left;
+    }
+    
+    .bonus-list li {
+      padding: 1rem 0;
+      padding-left: 2.5rem;
+      position: relative;
+      font-size: 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .bonus-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .bonus-list li::before {
+      content: '🎁';
+      position: absolute;
+      left: 0;
+      font-size: 1.5rem;
+    }
+    
+    /* Instructor Section */
+    .instructor-section {
+      background: #000;
+      padding: 5rem 0;
+      color: #fff;
+    }
+    
+    .instructor-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .instructor-image {
+      text-align: center;
+    }
+    
+    .instructor-image img {
+      width: 100%;
+      max-width: 350px;
+      border-radius: 20px;
+      border: 5px solid var(--primary-gold);
+      box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+    }
+    
+    .instructor-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--primary-gold);
+      margin-bottom: 1rem;
+    }
+    
+    .instructor-title {
+      color: var(--primary-red);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+    
+    .instructor-content p {
+      color: #e8e8e8;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+    }
+    
+    .credentials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .credential-item {
+      background: rgba(255, 215, 0, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      border-left: 3px solid var(--primary-gold);
+    }
+    
+    .credential-number {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--primary-gold);
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .credential-label {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    
+    /* Testimonials */
+    .testimonials-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      padding: 5rem 0;
+    }
+    
+    .testimonials-section .section-title {
+      color: var(--primary-red);
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    
+    .testimonial-card {
+      background: linear-gradient(135deg, var(--primary-gold) 0%, var(--accent-orange) 100%);
+      color: #000;
+      padding: 2rem;
+      border-radius: 15px;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+    }
+    
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 4rem;
+      color: rgba(0, 0, 0, 0.2);
+      line-height: 1;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    
+    .testimonial-author {
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+    
+    .testimonial-role {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    /* Final CTA */
+    .final-cta {
+      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+      padding: 5rem 0;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(196, 30, 58, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    
+    .final-cta-content {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .final-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--primary-gold);
+      margin-bottom: 1.5rem;
+    }
+    
+    .final-cta p {
+      font-size: 1.3rem;
+      color: #e8e8e8;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    
+    .urgency-text {
+      background: var(--primary-red);
+      color: #fff;
+      padding: 1rem 2rem;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: inline-block;
+      margin: 2rem 0;
+      animation: blink 2s infinite;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    
+    /* Footer */
+    footer {
+      background: #000;
+      color: #fff;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 2px solid var(--primary-gold);
+    }
+    
+    footer a {
+      color: var(--primary-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    footer a:hover {
+      color: var(--accent-orange);
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      
+      .hero-image {
+        order: -1;
+      }
+      
+      .instructor-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      .credentials {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .cta-header {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+      }
+      
+      .hero {
+        padding: 3rem 0 2rem;
+      }
+      
+      .cta-group {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+      
+      .benefits-grid,
+      .curriculum-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .credentials {
+        grid-template-columns: 1fr;
+      }
+      
+      .limited-badge {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
+      }
+    }
+    
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 999;
+    }
+    
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+    
+    .whatsapp-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+    }
+    
+    .whatsapp-icon {
+      width: 30px;
+      height: 30px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <a href="index.html" class="logo">
+        <img src="images/favicon.png" alt="Logo">
+        <span>The Dot-com Entrepreneur</span>
+      </a>
+    
+    
+      <!-- Nav links -->
+      <button class="cta-header" onclick="window.location.href='index.html'">Main Website</button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">DECEMBER CLASS OPEN NOW</div>
+          <h1>The Sales and Persuasion</h1>
+          <div class="hero-subtitle">MASTERCLASS</div>
+          <p class="hero-tagline">"The Plug-and-Play System of Top 1% Sales Performers"</p>
+          
+          <div class="pricing-box">
+            <div>
+              <span class="price-original">K1,500</span>
+              <span class="price-current">K997</span>
+            </div>
+            <div class="savings">SAVE K503 - Limited Time Only!</div>
+          </div>
+          
+          <div class="cta-group">
+            <a href="https://wa.me/260973493949?text=Hi,%20I%20want%20to%20enroll%20in%20the%20Sales%20and%20Persuasion%20Masterclass" class="btn btn-primary" target="_blank">
+              🔒 SECURE YOUR SPOT NOW
+            </a>
+            <a href="#curriculum" class="btn btn-ghost">View Full Curriculum</a>
+          </div>
+          
+          <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #b8b8b8;">
+            📞 For crypto payments: +260973493949
+          </p>
+        </div>
+        
+        <div class="hero-image">
+          <img src="images/485bde79-0453-4eb5-a6a6-3feebc98c341.jpg" alt="Sales and Persuasion Masterclass" onerror="this.style.display='none'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="benefits-section">
+    <div class="container">
+      <h2 class="section-title">Why This Masterclass?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h3>Sales Psychology</h3>
+          <p>Master the psychology behind buying decisions and consumer behavior to close more deals effortlessly.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">🚀</div>
+          <h3>Brand Strategy</h3>
+          <p>Learn how to position your brand as the go-to authority in your industry and attract premium clients.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">💰</div>
+          <h3>Customer Retention</h3>
+          <p>Discover proven strategies to turn one-time buyers into lifelong customers who refer others.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">⚙️</div>
+          <h3>System Creation</h3>
+          <p>Build automated sales systems that work 24/7 to generate leads and convert them into paying customers.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">🎤</div>
+          <h3>Persuasion Frameworks</h3>
+          <p>Master the art of ethical persuasion with frameworks used by top sales performers worldwide.</p>
+        </div>
+        
+        <div class="benefit-card">
+          <div class="benefit-icon">📚</div>
+          <h3>Book + Templates</h3>
+          <p>Get the exclusive "Xplode Sales" book plus ready-to-use templates you can implement immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Curriculum Section -->
+  <section id="curriculum" class="curriculum-section">
+    <div class="container">
+      <h2 class="section-title">What You'll Master</h2>
+      <div class="curriculum-grid">
+        <div class="curriculum-item">
+          <h4>Module 1: Sales Psychology</h4>
+          <p>Understanding buyer behavior and decision-making triggers</p>
+        </div>
+        
+        <div class="curriculum-item">
+          <h4>Module 2: Brand Positioning</h4>
+          <p>Creating a magnetic brand that attracts your ideal clients</p>
+        </div>
+        
+        <div class="curriculum-item">
+          <h4>Module 3: Customer Acquisition</h4>
+          <p>Proven strategies to generate high-quality leads consistently</p>
+        </div>
+        
+        <div class="curriculum-item">
+          <h4>Module 4: Conversion Optimization</h4>
+          <p>Turn prospects into paying customers with ethical persuasion</p>
+        </div>
+        
+        <div class="curriculum-item">
+          <h4>Module 5: Retention Strategies</h4>
+          <p>Keep customers coming back and referring others</p>
+        </div>
+        
+        <div class="curriculum-item">
+          <h4>Module 6: Sales Systems</h4>
+          <p>Build automated funnels that scale your revenue</p>
+        </div>
+        
+        <div class="curriculum-item">
+          <h4>Module 7: Pricing Psychology</h4>
+          <p>Master the art of premium pricing and value positioning</p>
+        </div>
+        
+        <div class="curriculum-item">
+          <h4>Module 8: Closing Techniques</h4>
+          <p>Seal deals with confidence using proven frameworks</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bonus Section -->
+  <section class="bonus-section">
+    <div class="container">
+      <div class="bonus-content">
+        <h2>EXCLUSIVE BONUSES</h2>
+        <p style="font-size: 1.3rem; margin-bottom: 2rem;">When you enroll today, you'll also receive:</p>
+        
+        <ul class="bonus-list">
+          <li><strong>Private Wealth Group Access</strong> - Network with like-minded entrepreneurs and get ongoing support</li>
+          <li><strong>"Xplode Sales" Book</strong> - Digital copy of the bestselling sales guide (Value: K200)</li>
+          <li><strong>Ready-to-Use Templates</strong> - Sales scripts, pitch decks, and funnel blueprints (Value: K300)</li>
+          <li><strong>Lifetime Course Updates</strong> - Access to all future course materials and updates (Priceless)</li>
+          <li><strong>1-on-1 Strategy Session</strong> - Personal consultation with The Dotcom Entrepreneur (Value: K500)</li>
+        </ul>
+        
+        <p style="font-size: 1.5rem; font-weight: 700; margin-top: 2rem;">
+          Total Bonus Value: K1,000+ <br>
+          <span style="color: var(--primary-gold);">Yours FREE when you enroll today!</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructor Section -->
+  <section class="instructor-section">
+    <div class="container">
+      <h2 class="section-title" style="text-align: center;">Meet Your Instructor</h2>
+      <div class="instructor-grid">
+        <div class="instructor-image">
+          <img src="images/about.png" alt="Kalungwe Mwenshi - The Dotcom Entrepreneur" onerror="this.src='images/favicon.png'">
+        </div>
+        
+        <div class="instructor-content">
+          <h2>Kalungwe Mwenshi</h2>
+          <p class="instructor-title">The Dotcom Entrepreneur | Brand Strategy & Sales Expert</p>
+          
+          <p>
+            Kalungwe Mwenshi is a top-tier sales and marketing coach who has transformed hundreds of businesses across Africa and beyond. With certifications in sales, negotiation, pitching, brand management, and business automation, he brings a wealth of practical knowledge to every session.
+          </p>
+          
+          <p>
+            As an author of 7 bestselling books including "Xplode Sales in Your Business" and "Influence Capitalism," Kalungwe has established himself as a leading voice in sales and entrepreneurship. His no-nonsense approach focuses on strategies that deliver results from day one.
+          </p>
+          
+          <p>
+            Whether speaking on international stages or coaching 1-on-1, Kalungwe's mission is clear: help entrepreneurs and business owners master the art of selling, build powerful brands, and scale their ventures to new heights.
+          </p>
+          
+          <div class="credentials">
+            <div class="credential-item">
+              <div class="credential-number">500+</div>
+              <div class="credential-label">Businesses Transformed</div>
+            </div>
+            
+            <div class="credential-item">
+              <div class="credential-number">50+</div>
+              <div class="credential-label">Speaking Engagements</div>
+            </div>
+            
+            <div class="credential-item">
+              <div class="credential-number">7</div>
+              <div class="credential-label">Bestselling Books</div>
+            </div>
+            
+            <div class="credential-item">
+              <div class="credential-number">95%</div>
+              <div class="credential-label">Client Satisfaction Rate</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section">
+    <div class="container">
+      <h2 class="section-title">What Students Say</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "Before working with The Dotcom Entrepreneur, I was struggling to turn leads into actual sales. In just three months, my closing rate doubled, and I finally feel in control of my business growth."
+          </p>
+          <div class="testimonial-author">Maimbolwa</div>
+          <div class="testimonial-role">Client, CEO</div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "The coaching sessions gave me practical strategies I could apply immediately. It's not just theory - every call brought me closer to scaling my business."
+          </p>
+          <div class="testimonial-author">Sichilong B.</div>
+          <div class="testimonial-role">Startup Owner</div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "I thought I knew sales until I started this program. The Dotcom Entrepreneur completely reshaped my mindset and helped me land my biggest client yet."
+          </p>
+          <div class="testimonial-author">Tebuho</div>
+          <div class="testimonial-role">Conference Organizer</div>
+        </div>
+        
+        <div class="testimonial-card">
+          <p class="testimonial-text">
+            "What stood out to me is how personalized the coaching was. It felt like having a partner who truly understood my challenges and pushed me to the next level."
+          </p>
+          <div class="testimonial-author">Chipwalamuka</div>
+          <div class="testimonial-role">Business Owner</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA Section -->
+  <section id="enroll" class="final-cta">
+    <div class="container">
+      <div class="final-cta-content">
+        <h2>Ready to Transform Your Sales Game?</h2>
+        <p>
+          Join the December cohort of The Sales and Persuasion Masterclass and master the proven frameworks that top 1% performers use to close more deals, build stronger brands, and scale their businesses.
+        </p>
+        
+        <div class="urgency-text">
+          ⚠️ ONLY 20 SEATS AVAILABLE - Class Starts Soon!
+        </div>
+        
+        <div class="pricing-box" style="max-width: 600px; margin: 2rem auto;">
+          <div>
+            <span class="price-original">K1,500</span>
+            <span class="price-current">K997</span>
+          </div>
+          <p style="color: var(--primary-gold); font-weight: 600; font-size: 1.1rem; margin-top: 1rem;">
+            ✨ Includes: Course + Bonuses Worth K1,000+
+          </p>
+          <div class="savings" style="margin-top: 1.5rem;">SAVE K503 TODAY!</div>
+        </div>
+        
+        <div class="cta-group" style="justify-content: center; margin-top: 3rem;">
+          <a href="https://wa.me/260973493949?text=Hi,%20I%20want%20to%20enroll%20in%20the%20Sales%20and%20Persuasion%20Masterclass" class="btn btn-primary" target="_blank" style="font-size: 1.3rem; padding: 1.25rem 3rem;">
+            🔒 ENROLL NOW - SECURE YOUR SPOT
+          </a>
+        </div>
+        
+        <p style="margin-top: 2rem; font-size: 1rem; color: #b8b8b8;">
+          💳 For crypto payments, contact: +260973493949<br>
+          📧 Questions? WhatsApp us anytime
+        </p>
+        
+        <div style="margin-top: 3rem; padding: 2rem; background: rgba(255, 215, 0, 0.1); border-radius: 15px; border: 2px solid var(--primary-gold);">
+          <h3 style="color: var(--primary-gold); margin-bottom: 1rem; font-size: 1.5rem;">30-Day Money-Back Guarantee</h3>
+          <p style="color: #e8e8e8; font-size: 1.1rem;">
+            We're so confident you'll love this masterclass that we offer a full refund if you're not satisfied within the first 30 days. No questions asked.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--primary-gold);">
+        <strong>The Dot-com Entrepreneur</strong>
+      </p>
+      <p style="margin-bottom: 1rem;">
+        Email: info@thedotcomentrepreneur.com | Phone: +260 961 111 468
+      </p>
+      <p style="margin-bottom: 1rem;">
+        Follow: 
+        <a href="https://web.facebook.com/TheDotcomEntrepreneur/">Facebook</a> · 
+        <a href="https://zm.linkedin.com/in/the-dotcom-entrepreneur-17527b171">LinkedIn</a> · 
+        <a href="https://youtube.com/@thedotcomentrepreneur">YouTube</a>
+      </p>
+      <p style="font-size: 0.9rem; color: #888; margin-top: 1.5rem;">
+        © <span id="year"></span> The Dot-Com Entrepreneur. All rights reserved.
+      </p>
+      <p style="margin-top: 1rem;">
+        <a href="index.html">Back to Main Site</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float Button -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/260973493949?text=Hi,%20I%20want%20to%20enroll%20in%20the%20Sales%20and%20Persuasion%20Masterclass" class="whatsapp-btn" target="_blank">
+      <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="currentColor">
+        <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.957 0-7.51 6.11-13.62 13.62-13.62s13.62 6.11 13.62 13.62-6.11 13.62-13.62 13.62zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.893 1.123-1.094 1.347c-0.201 0.227-0.402 0.254-0.748 0.080s-1.461-0.539-2.788-1.723c-1.030-0.922-1.726-2.058-1.927-2.404s-0.022-0.537 0.152-0.711c0.156-0.155 0.346-0.401 0.518-0.603 0.174-0.201 0.231-0.346 0.346-0.576 0.117-0.227 0.058-0.428-0.028-0.603s-0.776-1.87-1.063-2.565c-0.28-0.672-0.56-0.583-0.776-0.594-0.201-0.010-0.428-0.012-0.656-0.012s-0.603 0.085-0.92 0.428c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.227 2.428 3.711 5.881 5.205 0.822 0.354 1.463 0.566 1.963 0.723 0.825 0.262 1.577 0.225 2.168 0.137 0.661-0.099 2.049-0.839 2.335-1.647 0.289-0.808 0.289-1.501 0.201-1.647-0.085-0.144-0.316-0.227-0.662-0.401z"/>
+      </svg>
+      <span>Enroll Now</span>
+    </a>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Add scroll animation for elements
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+    
+    // Counter animation for credentials
+    function animateCounter(element, target, duration = 2000) {
+      let start = 0;
+      const increment = target / (duration / 16);
+      const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+          element.textContent = target + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
+          clearInterval(timer);
+        } else {
+          element.textContent = Math.floor(start) + (element.textContent.includes('+') ? '+' : '') + (element.textContent.includes('%') ? '%' : '');
+        }
+      }, 16);
+    }
+    
+    // Trigger counter animation when credentials section is visible
+    const credentialObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const numbers = entry.target.querySelectorAll('.credential-number');
+          numbers.forEach(num => {
+            const text = num.textContent;
+            const target = parseInt(text.replace(/\D/g, ''));
+            num.textContent = '0';
+            animateCounter(num, target);
+          });
+          credentialObserver.unobserve(entry.target);
+        }
+      });
+    });
+    
+    const credentialsSection = document.querySelector('.credentials');
+    if (credentialsSection) {
+      credentialObserver.observe(credentialsSection);
+    }
+  </script>
+</body>
+</html>
