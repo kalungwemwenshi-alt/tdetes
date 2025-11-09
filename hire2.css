@@ -123,8 +123,8 @@ header {
 /* Mobile Navigation - Pro Level */
 /* Mobile Navigation */
 .nav-toggle {
-  display: #FFFFFF;
-  background: none;
+  display: none;
+  background: #FFFFFF;
   border: none;
   color: #FFD700;
   font-size: 1.8rem;
