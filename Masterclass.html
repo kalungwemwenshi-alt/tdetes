@@ -37,36 +37,137 @@
       overflow-x: hidden;
     }
     
-    /* Header */
-    .header {
-      background: rgba(0, 0, 0, 0.98);
-      backdrop-filter: blur(10px);
-      padding: 1rem 0;
-      border-bottom: 2px solid var(--primary-gold);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    
-    .header-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--primary-gold);
-      text-decoration: none;
-      font-family: 'Playfair Display', serif;
-      font-weight: 700;
-      font-size: 1rem;
-    }
+ /* Header & Navigation */
+header {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #FFD700;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #FFD700;
+  font-weight: 700;
+  font-size: clamp(0.875rem, 2.2vw, 1.0rem);
+  font-family: 'Playfair Display', serif;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #FFD700;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #FFD700, #FFA500);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #FFD700;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile Navigation */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #FFD700;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle:hover {
+  transform: scale(1.1);
+}
+
+.hamburger {
+  display: block;
+  font-size: 1.5rem;
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    transform: translateY(-100vh);
+    transition: transform 0.3s ease;
+    border-top: 2px solid #FFD700;
+  }
+  
+  .nav-links.nav-active {
+    transform: translateY(0);
+  }
+  
+  .nav-links a {
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    width: 100%;
+  }
+  
+  .nav-toggle.active .hamburger {
+    transform: rotate(45deg);
+  }
+}
     
     .logo img {
       width: 40px;
@@ -765,6 +866,8 @@
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
+          <br>
+          <br>
           <div class="hero-badge">DECEMBER CLASS OPEN NOW</div>
           <h1>The Sales and Persuasion</h1>
           <div class="hero-subtitle">MASTERCLASS</div>
