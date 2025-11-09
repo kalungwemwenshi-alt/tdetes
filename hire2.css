@@ -123,7 +123,7 @@ header {
 /* Mobile Navigation - Pro Level */
 /* Mobile Navigation */
 .nav-toggle {
-  display: none;
+  display: #FFFFFF;
   background: none;
   border: none;
   color: #FFD700;
